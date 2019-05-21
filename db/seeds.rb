@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#Fabricate.times(10000, :favorite)
+Fabricate.times(10000, :favorite)
 
 Fabricate.times(30, :favorite, user: User.first)
