@@ -1,24 +1,29 @@
-# README
+# Purpose
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Find the most efficient solution to serializing objects that are 2 level nested
+To participate, clone this repo, run `bundle install`, migrate and `rails db:seed` to get the fake data (recommended)
 
-Things you may want to cover:
+Create your own branch, play a bit with Postman or your preferred tool for API calls and submit a pull request to propose a solution.
 
-* Ruby version
+## What's in this repo?
+This is a minimalistic Rails 5.2 API consisting of three models
+*User*
+*Favorite*
+*Design*
 
-* System dependencies
+They are associated with each other in the following way:
 
-* Configuration
+```
+class User < ApplicationRecord
+ has_many :favorites
+end
+```
 
-* Database creation
+```
+class Favorite < ApplicationRecord
+  belongs_to :design
+  belongs_to :user
+end
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Now, what would be the most efficient solution to retrieve the favorite designs of our first user?
